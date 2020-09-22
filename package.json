@@ -1,0 +1,36 @@
+{
+    "name": "muejs",
+    "version": "2.0.0",
+    "description": "muejs 用于快速构建BUI单页模板, 请仔细阅读说明文档. ",
+    "main": "muejs-cli.js",
+    "scripts": {},
+    "author": "Muejs <muejs@outlook.com>",
+    "license": "Apache 2.0",
+    "bin": {
+        "muejs": "./muejs-cli.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/muejs/Muejs-cli.git"
+    },
+    "keywords": [
+        "mue",
+        "mue-cli",
+        "muejs",
+        "muejs-cli"
+    ],
+    "bugs": {
+        "url": "https://github.com/muejs/Muejs-cli/issues"
+    },
+    "homepage": "http://www.muejs.com",
+    "dependencies": {
+        "chalk": "^1.1.3",
+        "decompress": "^4.2.0",
+        "fs-extra": "^3.0.1",
+        "jsonfile": "^3.0.0",
+        "process": "^0.11.10",
+        "prompt-confirm": "^1.2.0",
+        "request": "^2.81.0",
+        "yargs": "^8.0.2"
+    }
+}
