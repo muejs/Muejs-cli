@@ -1,4 +1,4 @@
-# muejs 命令行工具
+# muejs-cli 命令行工具
 
 
 | **描述**            | **修改日期**    |
@@ -8,13 +8,13 @@
 
 ## 一、简介
 
-> [muejs](https://github.com/muejs/muejs-cli) 是[Mue Webapp交互框架](http://www.muejs.com) 的cli命令工具, 用于快速生成指定平台与模板最新的工程文件.
+> [muecli](https://github.com/muejs/muejs-cli) 是[Mue Webapp交互框架](http://www.muejs.com) 的cli命令工具, 用于快速生成指定平台与模板最新的工程文件.
 
 *通过命令行构建,有以下好处:*
 
-1. 自动获取最新的BUI模板工程;
-2. 可以指定bui对应的平台版本;
-3. 可以指定bui的单页模板.  [BUI模板图片预览](https://github.com/muejs/Mue-Template/) ;
+1. 自动获取最新的mue模板工程;
+2. 可以指定mue对应的平台版本;
+3. 可以指定mue的单页模板.  [mue模板图片预览](https://github.com/muejs/Mue-Template/) ;
 4. 拥有服务器并支持接口跨域调试;
 5. 自动编译压缩混淆文件,便于打包部署的安全;
 6. 支持ES6编译;
@@ -29,17 +29,17 @@
 
 *windows:* 需要右键使用管理员打开终端或者安装 `powershell`.
 ```bash
-npm install -g muejs
+npm install -g muecli
 ```
 
 *mac: 打开终端, 需要权限,加上sudo,还要输入密码回车确认*
 ```bash
-$ sudo npm install -g muejs
+$ sudo npm install -g muecli
 ```
 
 ## 三、初始化工程目录:
 
-![muejs 创建工程预览](http://www.muejs.com/docs/images/router/muejs-create-demo_low.gif)
+![mue 创建工程预览](http://www.muejs.com/docs/images/router/muejs-create-demo_low.gif)
 
 
 ### 3.1 创建默认Webapp工程, 新版的muejs会针对不同的node版本,创建不同的工程,但是默认不会主动创建sass的编译支持.
@@ -47,7 +47,7 @@ $ sudo npm install -g muejs
 ```bash
 
 # * 创建webapp工程 (demo 为工程名称, 如果没有,则在当前目录)
-$ muejs create demo
+$ mue create demo
 
 # * 进入工程目录
 $ cd demo
@@ -69,15 +69,15 @@ $ npm run build
 
 在刚刚创建的demo工程里面再次执行以下命令
 ```bash
-$ muejs create -p sass
-$ muejs create -p less
+$ mue create -p sass
+$ mue create -p less
 ```
 
 **注意:** `npm run dev`使用这个命令, 样式的修改都需要在 `src/scss/style.scss` 文件. 如果直接修改`src/css/style.css`,需要删除`src/scss`目录,避免style.css被覆盖.
 
 > 安装时, 如果报 sass 错误, 请先执行 `npm remove node-sass` 然后再安装依赖.
 
-> 如 github 下载缓慢, 可以使用新的命令 `muejs create -f gitee` 使用码云的下载源. muejs 需要更新到 0.6.6 以上才有.
+> 如 github 下载缓慢, 可以使用新的命令 `mue create -f gitee` 使用码云的下载源. mue 需要更新到 0.6.6 以上才有.
 
 
 ### 3.2 自动打开默认浏览器,  修改src 目录的相同文件,就会生成对应的dist文件,用于预览.  
@@ -147,22 +147,22 @@ mue.ajax({
 
 注意: 中括号为可选,如果没有采用默认
 
-### muejs 命令列表
+### mue 命令列表
 
 | **命令行**   | **描述**           |
 |:------------- |:-------------------|
-| `muejs -v`       |查看当前工具的版本    |
-| `muejs -h`       |命令帮助信息    |
-| `muejs create `  |在当前目录创建bui webapp默认工程    |
-| `muejs create [projectName] [version] [-t templateName] [-p platformName] [-m moduleName] [-f from]`       |创建工程,支持指定版本,指定模板,指定平台,相同目录下会覆盖    |
-| `muejs update` | 在当前项目更新 bui为最新webapp版本,只修改mue.css,mue.js不覆盖项目其它内容    |
-| `muejs update [projectName] [version] [-p platformName] [-d dev] [-f from]` | 更新bui为某个版本,某个平台, -d 更新为最新的工程模式(dev)    |
-| `muejs list`       |显示可用的版本    |
-| `muejs list-template`       |显示可用的模板列表 [BUI模板图片预览](https://github.com/muejs/Mue-Template/)    |
-| `muejs list-platform`       |显示可用的平台列表    |
-| `muejs clear`       |清除下载的模板缓存    |
-| `muejs create -m 模块名 `  新     | 创建新的模块  m = module  |
-| `muejs create -f 数据源 `  新     | 创建工程来自 gitee 或者 github , 默认是 github  f = from    |
+| `mue -v`       |查看当前工具的版本    |
+| `mue -h`       |命令帮助信息    |
+| `mue create `  |在当前目录创建webapp默认工程    |
+| `mue create [projectName] [version] [-t templateName] [-p platformName] [-m moduleName] [-f from]`       |创建工程,支持指定版本,指定模板,指定平台,相同目录下会覆盖    |
+| `mue update` | 在当前项目更新 mue为最新webapp版本,只修改mue.css,mue.js不覆盖项目其它内容    |
+| `mue update [projectName] [version] [-p platformName] [-d dev] [-f from]` | 更新mue为某个版本,某个平台, -d 更新为最新的工程模式(dev)    |
+| `mue list`       |显示可用的版本    |
+| `mue list-template`       |显示可用的模板列表 [模板图片预览](https://github.com/muejs/Mue-Template/)    |
+| `mue list-platform`       |显示可用的平台列表    |
+| `mue clear`       |清除下载的模板缓存    |
+| `mue create -m 模块名 `  新     | 创建新的模块  m = module  |
+| `mue create -f 数据源 `  新     | 创建工程来自 gitee 或者 github , 默认是 github  f = from    |
 
 ### NPM 命令列表
 
@@ -175,26 +175,26 @@ mue.ajax({
 
 ## 六、命令示例
 ### 创建某个模板工程 ( main-tab 为模板名称)
-可以先查看有什么模板 `muejs list-template`, [BUI模板图片预览](https://github.com/muejs/Mue-Template/)
+可以先查看有什么模板 `mue list-template`, [模板图片预览](https://github.com/muejs/Mue-Template/)
 
 ```bash
 # 查看有什么模板
-$ muejs list-template
+$ mue list-template
 
 # 进入当前工程 demo
 $ cd demo
 
 # 替换main模板
-$ muejs create -t main-tab
+$ mue create -t main-tab
 
 # 新增login模板
-$ muejs create -t page-login
+$ mue create -t page-login
 
 # 新增一个新模块 apps 
-$ muejs create -m apps
+$ mue create -m apps
 
 # 新增一个新子模块 apps/meeting 
-$ muejs create -m apps/meeting
+$ mue create -m apps/meeting
 
 ```
 
@@ -210,7 +210,7 @@ $ muejs create -m apps/meeting
 
 ### 创建指定平台工程 ( dcloud 为平台名称 )
 
-可以先查看有什么平台选择 `muejs list-platform`
+可以先查看有什么平台选择 `mue list-platform`
 > <strong style="color:red">注意:</strong>
 1. 目前已经支持以下打包平台 cordova,bingotouch,dcloud,apicloud,appcan,微信 等;
 2. 不同平台对应的文件会有些许不同, 绑定原生后退的方法也不同, 不指定平台时, 默认是webapp平台, 可以在微信及webkit浏览器内核预览.
@@ -220,7 +220,7 @@ $ muejs create -m apps/meeting
 ```bash
 
 # 创建Dcloud平台的应用
-$ muejs create -p dcloud
+$ mue create -p dcloud
 
 ```
 
@@ -228,7 +228,7 @@ $ muejs create -p dcloud
 
 ```bash
 
-$ muejs create -t sidebar -p dcloud
+$ mue create -t sidebar -p dcloud
 
 ```
 
@@ -236,7 +236,7 @@ $ muejs create -t sidebar -p dcloud
 
 ```bash
 
-$ muejs create -p sass
+$ mue create -p sass
 
 ```
 
@@ -244,49 +244,43 @@ $ muejs create -p sass
 
 ```bash
 
-$ muejs create -p less
+$ mue create -p less
 
 ```
 
 ### 创建指定版本工程
-> 可以先查看有什么版本 `muejs list`
+> 可以先查看有什么版本 `mue list`
 
 ```bash
-muejs create v1.0
+mue create v1.0
 ```
 
 
-### 更新工程为最新bui版本
+### 更新工程为最新mue版本
 
 ```bash
-muejs update
+mue update
 ```
 
-
-### 更新工程为最新bui版本及平台
-
-```bash
-muejs update -p bingotouch
-```
 
 ### 创建多页工程
 
 ```bash
-muejs update -p mpa
+mue update -p mpa
 ```
 
 
 ### 更新工程为最新npm开发模式 node10以上使用以下方式更新
 
 ```bash
-muejs update -d
+mue update -d
 ```
 也可以指定更新对应的node版本
 ```bash
-muejs update -d node8
-muejs update -d node8-sass
-muejs update -d node10
-muejs update -d node10-sass
+mue update -d node8
+mue update -d node8-sass
+mue update -d node10
+mue update -d node10-sass
 ```
 
 ### 创建新模块
@@ -294,7 +288,7 @@ muejs update -d node10-sass
 模块的访问路径: 默认: `index.html#pages/article/index`
 
 ```bash
-muejs create -m article
+mue create -m article
 ```
 
 
@@ -310,33 +304,33 @@ muejs create -m article
 | dist/     | 编译打包最终要部署的目录    |
 | src/index.html     |入口文件    |
 | src/index.js       |入口的脚本    |
-| src/css/mue.css  |BUI库的样式文件    |
+| src/css/mue.css  |mue库的样式文件    |
 | src/css/style.css  | 当前应用的样式文件    |
 | src/font/         |字体图标目录    |
 | src/images/       |应用图片目录    |
 | src/scss/       | 样式源文件,样式最好放这里可以分模块管理    |
-| src/js/zepto.js  | bui的依赖库  |
+| src/js/zepto.js  | mue的依赖库  |
 | src/js/plugins/fastclick.js  |  移动端快速点击的插件   |
-| src/js/mue.js       |  BUI交互控件库   |
+| src/js/mue.js       |  mue交互控件库   |
 | src/pages/      | 模块目录    |
 | src/pages/main       | 默认 main 模块    |
 | src/pages/main/main.html      | 默认 main 模块模板    |
 | src/pages/main/main.js      | 默认 main 模块定义脚本    |
 
-## 八、多个bui工程共享`node_modules`模块目录
+## 八、多个mue工程共享`node_modules`模块目录
 
-> 现在每次创建一个工程以后, 每次都需要执行 `npm install` 特别的繁琐, 通过以下步骤, 可以创建一个bui的相关工程共享 `node_modules`
+> 现在每次创建一个工程以后, 每次都需要执行 `npm install` 特别的繁琐, 通过以下步骤, 可以创建一个mue的相关工程共享 `node_modules`
 
-1. 升级muejs 0.5.3
-2. 创建bui工程目录, 作为所有工程目录 `muejs create mue-projects`, 删除 <del>src目录,app.json</del> ,只保留 `package.json, gulpfile.js `
+1. 升级mue 2.0
+2. 创建mue工程目录, 作为所有工程目录 `mue create mue-projects`, 删除 <del>src目录,app.json</del> ,只保留 `package.json, gulpfile.js `
 3. `cd mue-projects` 进入目录
 4. `npm install` 安装依赖模块
-5. `muejs create project1` 创建带工程名的工程
+5. `mue create project1` 创建带工程名的工程
 6. `npm run dev-project1` 运行服务预览 或者 `npm run build-project1` 编译打包
 
 ```bash
-# 创建 mue-projects 文件夹作为公共的bui应用目录
-muejs create mue-projects
+# 创建 mue-projects 文件夹作为公共的mue应用目录
+mue create mue-projects
 
 # 进入这个目录
 cd mue-projects/
@@ -345,7 +339,7 @@ cd mue-projects/
 npm install
 
 # 创建 project1 工程
-muejs create project1
+mue create project1
 
 # 运行预览
 npm run dev-project1
@@ -361,11 +355,11 @@ npm run build-project1
 
 ```bash
 # 从 gitee 的最新版本创建默认工程. 
-muejs create -f gitee
-muejs create -f github
+mue create -f gitee
+mue create -f github
 
 # 创建一次以后,在没有新版本的时候, 创建其它模板, 无需再加入这个 `-f` from命令. 
-muejs create -t main-tab
+mue create -t main-tab
 ```
 
 ## 十、创建完整案例参考
@@ -373,7 +367,7 @@ muejs create -t main-tab
 ```bash
 
 # 创建163案例
-muejs create -t case-163
+mue create -t case-163
 ```
 
 
@@ -385,10 +379,10 @@ muejs create -t case-163
 ```bash
 
 # 先让你的文件支持sass
-muejs create -p sass
+mue create -p sass
 
 # 创建一个红色皮肤, 在__variables.scss 文件里面通过 $main-color 修改为其它主色调, 会把头部等样式替换
-muejs create -p skin
+mue create -p skin
 
 ```
 
@@ -399,10 +393,10 @@ muejs create -p skin
 ```bash
 
 # 先让你的文件支持sass
-muejs create -p sass
+mue create -p sass
 
 # 创建一个深色皮肤
-muejs create -p skindeep
+mue create -p skindeep
 ```
 
 

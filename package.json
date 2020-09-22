@@ -1,13 +1,13 @@
 {
-    "name": "muejs",
-    "version": "2.0.0",
+    "name": "muecli",
+    "version": "2.0.1",
     "description": "muejs 用于快速构建BUI单页模板, 请仔细阅读说明文档. ",
-    "main": "muejs-cli.js",
+    "main": "muecli.js",
     "scripts": {},
     "author": "Muejs <muejs@outlook.com>",
     "license": "Apache 2.0",
     "bin": {
-        "muejs": "./muejs-cli.js"
+        "mue": "./muecli.js"
     },
     "repository": {
         "type": "git",
